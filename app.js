@@ -7,7 +7,7 @@ $(function() {
   $('button').on('click',function() {
     var tempColor = $(this).data('color');
     $('.container').append('<div class="color-cube ' + tempColor + '" data-color="' + tempColor + '"></div>');
-    $('.container div').fadeIn('fast');
+    $('.container div').fadeIn(200);
     console.log(tempColor);
     switch(tempColor) {
       case 'red':
@@ -32,12 +32,12 @@ $(function() {
 
   $('.container').on('click', '.color-cube', function() {
     var tempColor = $(this).data('color');
-    $(this).fadeOut('fast');
+    $(this).fadeOut(200);
     var tempElement = $(this);
-    window.setTimeout(function() {
+    setTimeout(function() {
       $(tempElement).remove();
-      console.log('done');
-    }, 500);
+      console.log('removed');
+    }, 200);
     switch(tempColor) {
       case 'red':
         numRed--;
